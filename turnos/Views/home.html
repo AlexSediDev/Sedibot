@@ -1,0 +1,53 @@
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+<script type="text/javascript">
+
+var row;
+
+function start(){  
+  row = event.target; 
+}
+function dragover(){
+  var e = event;
+  e.preventDefault(); 
+  
+  let children= Array.from(e.target.parentNode.parentNode.children);
+  
+  if(children.indexOf(e.target.parentNode)>children.indexOf(row))
+    e.target.parentNode.after(row);
+  else
+    e.target.parentNode.before(row);
+}
+</script>
+
+<table>
+	<thead>
+	 <tr>  
+	  <th>Personas</th>
+	 </tr>
+	</thead>
+	<tbody>
+	 <tr draggable="true" ondragstart="start()"  ondragover="dragover()">  
+	  <td>Keuri</td>
+	 </tr>
+	 <tr draggable="true" ondragstart="start()" ondragover="dragover()">  
+	  <td>Juan Becerra</td>
+	 </tr>
+	 <tr draggable="true" ondragstart="start()" ondragover="dragover()">  
+	  <td>Ernesto Benites</td>
+	 </tr>
+   <tr draggable="true" ondragstart="start()" ondragover="dragover()">  
+	  <td>Juan Espinoza</td>
+	 </tr>
+   <tr draggable="true" ondragstart="start()" ondragover="dragover()">  
+	  <td>Norberto</td>
+	 </tr>
+   <tr draggable="true" ondragstart="start()" ondragover="dragover()">  
+	  <td>Samuel</td>
+	 </tr>
+   <tr draggable="true" ondragstart="start()" ondragover="dragover()">  
+	  <td>Alexis</td>
+	 </tr>
+	</tbody>
+	</table>
